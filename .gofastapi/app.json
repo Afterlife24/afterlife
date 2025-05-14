@@ -1,0 +1,11 @@
+
+{
+    "version": "v1",
+    "project_id": "TfgIga8JeU2j6auVMnM3tRtn",
+    "app_id": "oa2lo-do6ApE9EHQLGnZCXwV",
+    "app_type": "static_site",
+    "domain": "www.afterlife.org.in",
+    "deploy": {
+        "target_dir": "./dist"
+    }
+}
