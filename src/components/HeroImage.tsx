@@ -1,25 +1,17 @@
 import React from 'react';
-import heroImage from '../assets/without_bg.png'; // adjust path and extension
 
 const HeroImage: React.FC = () => {
   return (
     <div className="relative w-full max-w-[300px] sm:max-w-[350px] md:max-w-[450px] mx-auto">
       <img 
-        src={heroImage} 
+        src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
         alt="AI Technology Visualization" 
-        className="w-full h-auto main-image" // removed rounded-lg and shadow-2xl
-        style={{
-          background: 'transparent', // ensure no background
-        }}
+        className="w-full h-auto rounded-lg shadow-2xl main-image"
       />
       
       <style jsx>{`
         .main-image {
           animation: upAndDown 3s infinite;
-          // Add these if your image has a default background:
-          background: transparent !important;
-          border: none !important;
-          box-shadow: none !important;
         }
         
         @keyframes upAndDown {
