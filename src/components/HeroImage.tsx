@@ -8,7 +8,6 @@ const HeroImage: React.FC = () => {
         alt="AI Technology Visualization" 
         className="w-full h-auto rounded-lg shadow-2xl main-image"
       />
-      
       <style jsx>{`
         .main-image {
           animation: upAndDown 3s infinite;
