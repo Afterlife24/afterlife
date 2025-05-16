@@ -1,7 +1,6 @@
 import React from 'react';
 import { Award, Users, Briefcase, BookOpen } from 'lucide-react';
 import TeamMember from '../components/TeamMember';
-
 const AboutPage: React.FC = () => {
   const teamMembers = [
     {
