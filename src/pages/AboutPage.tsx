@@ -1,32 +1,30 @@
 import React from 'react';
 import { Award, Users, Briefcase, BookOpen } from 'lucide-react';
 import TeamMember from '../components/TeamMember';
+import austin from '../assests/WhatsApp Image 2025-06-06 at 21.13.21_bc7f3526.jpg';
+import dhanush from '../assests/dhanush.png';
+import ashrith from '../assests/ashrith.jpg';
 
 const AboutPage: React.FC = () => {
   const teamMembers = [
     {
-      name: "Sarah Johnson",
-      role: "CEO & Founder",
-      image: "https://images.pexels.com/photos/5439153/pexels-photo-5439153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      bio: "Former AI research lead with 15+ years of industry experience. Passionate about making AI accessible to businesses of all sizes."
+      name: "Austin Kumar",
+      role: "CEO",
+      image: austin,
+      bio: "Marketing strategist with a data-driven approach. Passionate about scaling brands through innovative growth strategies."
     },
+    
     {
-      name: "Michael Chen",
+      name: "Ashrith ",
       role: "CTO",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      bio: "AI engineer with extensive experience in machine learning and natural language processing. Led development of our core AI framework."
+      image:ashrith,
+      bio: "Technology leader driving innovation in web and mobile application development. Oversees technical strategy and architecture for scalable, high-performance digital solutions."
     },
     {
-      name: "Elena Rodriguez",
-      role: "Lead Designer",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      bio: "UX/UI expert specialized in creating intuitive interfaces for complex systems. Ensures our technology is accessible to everyone."
-    },
-    {
-      name: "David Okafor",
-      role: "Head of Business Development",
-      image: "https://images.pexels.com/photos/532220/pexels-photo-532220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
-      bio: "Former restaurant owner turned tech enthusiast. Brings real-world experience to help shape our restaurant technology solutions."
+      name: "DhanushVardhan",
+      role: "COO",
+      image: dhanush,
+      bio: "Seasoned full-stack developer specializing in web and mobile applications. Leads our technical team in building scalable, high-performance digital solutions across platforms."
     }
   ];
 
@@ -129,7 +127,7 @@ const AboutPage: React.FC = () => {
       </section>
       
       {/* Our Team */}
-      <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+      <section className="py-16 px-4 md:px-10 max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -138,7 +136,7 @@ const AboutPage: React.FC = () => {
           <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
             <TeamMember 
               key={index}
