@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, Users, Briefcase, BookOpen } from 'lucide-react';
 import TeamMember from '../components/TeamMember';
+
 import austin from '../assests/WhatsApp Image 2025-06-06 at 21.13.21_bc7f3526.jpg';
 import dhanush from '../assests/dhanush.png';
 import ashrith from '../assests/ashrith.jpg';
