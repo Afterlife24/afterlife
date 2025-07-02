@@ -15,10 +15,23 @@ jobs:
       steps:
         - name: Checkout
           uses: actions/checkout@v3
-        - name: GoFastAPI Deploy
-          run: |
-            npm ci --legacy-peer-deps
-            npm run build
-            npx gofastapi login --auth-token=${{ secrets.GOFASTAPI_AUTH_TOKEN }}
-            npx gofastapi clean
-            npx gofastapi deploy
+        - name: Set up Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ env.NODE_VERSION }}
+
+        - name: Install dependencies
+          run: npm ci
+
+        - name: Build static site
+          run: npm run build
+
+        - name: Configure AWS credentials
+          uses: aws-actions/configure-aws-credentials@v2
+          with:
+            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            aws-region: eu-west-3
+
+        - name: Deploy to S3
+          run: aws s3 sync dist/ s3://afterlife-frontend-website --delete
