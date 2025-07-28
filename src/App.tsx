@@ -26,10 +26,10 @@ function App() {
 
   const notifications = [
     "🚀 New AI features released! Check out our latest updates.",
-    "💡 Introducing ScanMe v2.0 - Enhanced menu analytics and customer insights.",
-    "🌐 Limited time offer: Get 20% off on our web development services.",
-    "📱 Our mobile app is now available on iOS and Android!",
-    "🎉 Join our webinar on AI in the restaurant industry - Register now!"
+    // "💡 Introducing ScanMe v2.0 - Enhanced menu analytics and customer insights.",
+    // "🌐 Limited time offer: Get 20% off on our web development services.",
+    // "📱 Our mobile app is now available on iOS and Android!",
+    // "🎉 Join our webinar on AI in the restaurant industry - Register now!"
   ];
 
   return (

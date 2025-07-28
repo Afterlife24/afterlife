@@ -44,8 +44,9 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center" onClick={closeMenu}>
-              <Bot className="h-8 w-8 text-blue-600" />
-              <span className="ml-2 text-xl font-bold">AI Solutions</span>
+              {/* <Bot className="h-8 w-8 text-blue-600" /> */}
+              <img src="/AfterLife.jpg" alt="AfterLife Logo" className="h-10 w-10 object-contain" />
+              <span className="ml-2 text-xl font-bold">AfterLife</span>
             </Link>
           </div>
           
