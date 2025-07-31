@@ -1,31 +1,35 @@
 import React from 'react';
+import heroImage from '../assests/bg.png'; // Ensure the path is correct
 
 const HeroImage: React.FC = () => {
   return (
-    <div className="relative w-full max-w-[300px] sm:max-w-[350px] md:max-w-[450px] mx-auto">
+    <>
       <img 
-        src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+        src={heroImage} 
         alt="AI Technology Visualization" 
-        className="w-full h-auto rounded-lg shadow-2xl main-image"
+        className="hero-image"
       />
+      
       <style jsx>{`
-        .main-image {
-          animation: upAndDown 3s infinite;
+        .hero-image {
+          width: 100%;
+          max-width: 450px; /* Responsive max width */
+          height: auto;
+          display: block;
+          margin: 0 auto; /* Centers the image */
+          animation: upAndDown 3s ease-in-out infinite;
         }
-        
+
         @keyframes upAndDown {
-          0% {
+          0%, 100% {
             transform: translateY(0);
           }
           50% {
-            transform: translateY(-30px);
-          }
-          100% {
-            transform: translateY(0);
+            transform: translateY(-20px);
           }
         }
       `}</style>
-    </div>
+    </>
   );
 };
 
