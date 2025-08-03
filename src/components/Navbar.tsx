@@ -45,7 +45,8 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           <div className="flex items-center">
   <Link to="/" className="flex-shrink-0 flex items-center" onClick={closeMenu}>
     {/* Logo Image */}
-    <img 
+              <img 
+                
       src="/src/assests/removed.png" 
       alt="Logo" 
       className="h-8 w-8 object-contain" 
