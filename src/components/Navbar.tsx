@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Bot, Sun, Moon } from 'lucide-react';
+import logo from '../assests/removed.png';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -46,11 +47,11 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   <Link to="/" className="flex-shrink-0 flex items-center" onClick={closeMenu}>
     {/* Logo Image */}
               <img 
-                
-      src="/src/assests/removed.png" 
-      alt="Logo" 
-      className="h-8 w-8 object-contain" 
-    />
+  src={logo} 
+  alt="Logo" 
+  className="h-8 w-8 object-contain" 
+/>
+
     
     {/* Brand Text */}
     <span className="ml-2 text-xl font-bold">AfterLife</span>

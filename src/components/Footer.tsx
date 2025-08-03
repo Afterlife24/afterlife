@@ -18,13 +18,13 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               
-              <a href="#" className="text-gray-400 hover:text-blue-500 transition-colors">
+              <a href="https://www.linkedin.com/company/afterlife24/?viewAsMember=true" className="text-gray-400 hover:text-blue-500 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-500 transition-colors">
+              <a href="https://www.facebook.com/people/Pretty-Ai/pfbid02MFqJj5vMHBktZHMUQcbknoiAfStFV3sc3UQgTRaeGo68hJJYbZ28dWtmKqryLqw8l/" className="text-gray-400 hover:text-blue-500 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-500 transition-colors">
+              <a href="https://www.instagram.com/afterlife668?igsh=N29qMXBkNTM0b2ll&utm_source=qr" className="text-gray-400 hover:text-blue-500 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
