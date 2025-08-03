@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Bot, Twitter, Linkedin, Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
+
 
 const Footer: React.FC = () => {
   return (
@@ -84,9 +86,17 @@ const Footer: React.FC = () => {
                 <span>Paris 70123</span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 text-blue-500 mr-2" />
-                <span>+33 (766) 720-023</span>
-              </li>
+  <FaWhatsapp className="h-5 w-5 text-green-500 mr-2" />
+  <a
+    href="https://wa.me/33766720023"
+    className="hover:text-green-500 transition-colors"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    +33 (766) 720-023
+  </a>
+</li>
+
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-500 mr-2" />
                 <a href="mailto:info@aisolutions.com" className="hover:text-blue-500 transition-colors">

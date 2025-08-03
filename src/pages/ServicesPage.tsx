@@ -32,7 +32,7 @@ const ServicesPage: React.FC = () => {
       <section className="py-16 px-4 md:px-8 bg-gray-100 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">All Our Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Comprehensive solutions to help your business thrive in the digital age
             </p>
@@ -40,14 +40,7 @@ const ServicesPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ServiceCard
-              title="ScanMe: Digital Menu"
-              description="QR-based digital menus with analytics and real-time updates for restaurants."
-              icon={<Bot className="w-12 h-12 text-blue-500" />}
-              highlighted={false}
-              link="/product"
-              cta="Learn More"
-            />
+            
             <ServiceCard title="Web Development" description="Custom websites and web applications designed for your specific business needs." icon={<Code className="w-12 h-12 text-purple-500" />} highlighted={false} link="#" cta="Our Solutions" />
             <ServiceCard title="Mobile Apps" description="Native and cross-platform mobile applications that engage your customers." icon={<Smartphone className="w-12 h-12 text-indigo-500" />} highlighted={false} link="#" cta="View Apps" />
             <ServiceCard title="Web Hosting" description="Reliable and secure hosting solutions with 99.9% uptime guarantee." icon={<Server className="w-12 h-12 text-green-500" />} highlighted={false} link="#" cta="Hosting Plans" />

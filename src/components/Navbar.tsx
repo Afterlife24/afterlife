@@ -86,7 +86,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               </button>
               
               <a
-  href="tel:+33766720023"
+  href="https://wa.me/33766720023"
   className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
   onClick={closeMenu}
 >
@@ -139,7 +139,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             </Link>
           ))}
           <a
-  href="tel:+33766720023"
+  href="https://wa.me/33766720023"
   className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
   onClick={closeMenu}
 >
