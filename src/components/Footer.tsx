@@ -17,9 +17,7 @@ const Footer: React.FC = () => {
               Empowering institutions and businesses with advanced AI solutions since 2025.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-500 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
+              
               <a href="#" className="text-gray-400 hover:text-blue-500 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
@@ -48,12 +46,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link to="/product" className="hover:text-blue-500 transition-colors">ScanMe</Link>
               </li>
-              <li>
-                <a href="#" className="hover:text-blue-500 transition-colors">Blog</a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-blue-500 transition-colors">Careers</a>
-              </li>
+              
             </ul>
           </div>
 
@@ -62,22 +55,22 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-blue-500 transition-colors">ScanMe: Digital Menu</a>
+                ScanMe: Digital Menu
               </li>
               <li>
-                <a href="#" className="hover:text-blue-500 transition-colors">Web Development</a>
+                Web Development
               </li>
               <li>
-                <a href="#" className="hover:text-blue-500 transition-colors">Web Hosting</a>
+                Web Hosting
               </li>
               <li>
-                <a href="#" className="hover:text-blue-500 transition-colors">Mobile Apps</a>
+                Mobile Apps
               </li>
               <li>
-                <a href="#" className="hover:text-blue-500 transition-colors">Business Analytics</a>
+                Business Analytics
               </li>
               <li>
-                <a href="#" className="hover:text-blue-500 transition-colors">Cloud Solutions</a>
+                Cloud Solutions
               </li>
             </ul>
           </div>
@@ -110,7 +103,6 @@ const Footer: React.FC = () => {
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-blue-500 transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-blue-500 transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-blue-500 transition-colors">Cookie Policy</a>
             </div>
           </div>
         </div>

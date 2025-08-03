@@ -18,14 +18,17 @@ const HomePage: React.FC = () => {
               Transform your business with cutting-edge AI solutions designed for real-world challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/product" className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all flex items-center justify-center">
-                Explore ScanMe
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <Link to="/services" className="px-8 py-3 bg-transparent border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-600/10 rounded-lg font-medium transition-all flex items-center justify-center">
-                Our Services
-              </Link>
-            </div>
+              <Link to="/services" className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all flex items-center justify-center">
+    Our Services
+    <ArrowRight className="ml-2 h-5 w-5" />
+  </Link>
+  <Link to="/product" className="px-8 py-3 bg-transparent border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-600/10 rounded-lg font-medium transition-all flex items-center justify-center">
+    Explore ScanMe
+    <ArrowRight className="ml-2 h-5 w-5" />
+  </Link>
+  
+</div>
+
           </div>
           <div className="flex justify-center">
             <HeroImage />

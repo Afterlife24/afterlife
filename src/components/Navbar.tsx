@@ -43,12 +43,19 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center" onClick={closeMenu}>
-              <Bot className="h-8 w-8 text-blue-600" />
-              {/* <img src="/favicon.ico" alt="AfterLife Logo" className="h-10 w-10 object-contain" /> */}
-              <span className="ml-2 text-xl font-bold">AfterLife</span>
-            </Link>
-          </div>
+  <Link to="/" className="flex-shrink-0 flex items-center" onClick={closeMenu}>
+    {/* Logo Image */}
+    <img 
+      src="/src/assests/removed.png" 
+      alt="Logo" 
+      className="h-8 w-8 object-contain" 
+    />
+    
+    {/* Brand Text */}
+    <span className="ml-2 text-xl font-bold">AfterLife</span>
+  </Link>
+</div>
+
           
           <div className="hidden md:flex items-center space-x-8">
             <div className="flex space-x-8">
@@ -77,11 +84,13 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               </button>
               
               <a
-                href="#contact"
-                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Contact Us
-              </a>
+  href="tel:+33766720023"
+  className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+  onClick={closeMenu}
+>
+  Contact Us
+</a>
+
             </div>
           </div>
           
@@ -128,12 +137,13 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             </Link>
           ))}
           <a
-            href="#contact"
-            className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
-            onClick={closeMenu}
-          >
-            Contact Us
-          </a>
+  href="tel:+33766720023"
+  className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+  onClick={closeMenu}
+>
+  Contact Us
+</a>
+
         </div>
       </div>
     </header>

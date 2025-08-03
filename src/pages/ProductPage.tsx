@@ -112,7 +112,7 @@ const ProductPage: React.FC = () => {
               Transform your restaurant's dining experience with QR-based digital menus that delight customers and boost your bottom line.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#pricing" className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all flex items-center justify-center">
+              <a href="#how-it-works" className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all flex items-center justify-center">
                 Get Started
               </a>
               <a href="#demo" className="px-8 py-3 bg-transparent border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-600/10 rounded-lg font-medium transition-all flex items-center justify-center">
@@ -158,7 +158,7 @@ const ProductPage: React.FC = () => {
       </section>
       
       {/* How It Works */}
-      <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+      <section id="how-it-works"  className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">How ScanMe Works</h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -201,39 +201,7 @@ const ProductPage: React.FC = () => {
       </section>
       
       {/* Pricing */}
-      <section id="pricing" className="py-16 px-4 md:px-8 bg-gray-100 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Choose the plan that's right for your restaurant
-            </p>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {plans.map((plan, index) => (
-              <PricingCard
-                key={index}
-                name={plan.name}
-                price={plan.price}
-                description={plan.description}
-                features={plan.features}
-                highlighted={plan.highlighted}
-              />
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
-              All plans include a 14-day free trial. No credit card required.
-            </p>
-            <p className="text-gray-600 dark:text-gray-400">
-              Need a custom solution? <a href="#" className="text-blue-600 hover:underline">Contact us</a> for enterprise pricing.
-            </p>
-          </div>
-        </div>
-      </section>
+      
       
       {/* Demo Request */}
       <section id="demo" className="py-16 px-4 md:px-8 max-w-7xl mx-auto">

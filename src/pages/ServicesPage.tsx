@@ -6,22 +6,13 @@ import TestimonialCard from '../components/TestimonialCard';
 const ServicesPage: React.FC = () => {
   const testimonials = [
     {
-      name: "Marcus Johnson",
-      role: "Owner, Bistro 42",
       content: "ScanMe transformed how we operate. Our customers love the digital menu experience, and we've seen a 20% increase in average order value.",
-      image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
-      name: "Laura Chen",
-      role: "CEO, TechStart Inc",
       content: "The web development team delivered a solution that exceeded our expectations. The site is beautiful, fast, and our conversion rates have increased significantly.",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
-      name: "Robert Garcia",
-      role: "CTO, GrowthMaster",
       content: "Their hosting service is reliable and their support team is always available. We've had zero downtime since switching to their platform.",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     }
   ];
 
@@ -53,46 +44,18 @@ const ServicesPage: React.FC = () => {
                 interactive, engaging menu experience.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
+                {["QR code integration", "Real-time menu updates", "Customer analytics", "Multi-language support"].map((feature, i) => (
+                  <div key={i} className="flex items-start">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center">
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
                     </div>
+                    <p className="ml-3 text-gray-700 dark:text-gray-300">{feature}</p>
                   </div>
-                  <p className="ml-3 text-gray-700 dark:text-gray-300">QR code integration</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                  </div>
-                  <p className="ml-3 text-gray-700 dark:text-gray-300">Real-time menu updates</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                  </div>
-                  <p className="ml-3 text-gray-700 dark:text-gray-300">Customer analytics</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                  </div>
-                  <p className="ml-3 text-gray-700 dark:text-gray-300">Multi-language support</p>
-                </div>
+                ))}
               </div>
               <a href="/product" className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all">
                 Learn More
@@ -129,69 +92,13 @@ const ServicesPage: React.FC = () => {
               link="/product"
               cta="Learn More"
             />
-            
-            <ServiceCard 
-              title="Web Development" 
-              description="Custom websites and web applications designed for your specific business needs."
-              icon={<Code className="w-12 h-12 text-purple-500" />}
-              highlighted={false}
-              link="#"
-              cta="Our Solutions"
-            />
-            
-            <ServiceCard 
-              title="Mobile Apps" 
-              description="Native and cross-platform mobile applications that engage your customers."
-              icon={<Smartphone className="w-12 h-12 text-indigo-500" />}
-              highlighted={false}
-              link="#"
-              cta="View Apps"
-            />
-            
-            <ServiceCard 
-              title="Web Hosting" 
-              description="Reliable and secure hosting solutions with 99.9% uptime guarantee."
-              icon={<Server className="w-12 h-12 text-green-500" />}
-              highlighted={false}
-              link="#"
-              cta="Hosting Plans"
-            />
-            
-            <ServiceCard 
-              title="Database Solutions" 
-              description="Scalable database design and management for your growing business."
-              icon={<Database className="w-12 h-12 text-orange-500" />}
-              highlighted={false}
-              link="#"
-              cta="Explore"
-            />
-            
-            <ServiceCard 
-              title="Cloud Infrastructure" 
-              description="Optimize your cloud infrastructure for performance, security, and cost efficiency."
-              icon={<Cloud className="w-12 h-12 text-teal-500" />}
-              highlighted={false}
-              link="#"
-              cta="Cloud Services"
-            />
-            
-            <ServiceCard 
-              title="Business Analytics" 
-              description="Data-driven insights to help you make better business decisions."
-              icon={<BarChart3 className="w-12 h-12 text-red-500" />}
-              highlighted={false}
-              link="#"
-              cta="Analytics"
-            />
-            
-            <ServiceCard 
-              title="24/7 Support" 
-              description="Round-the-clock technical support to keep your systems running smoothly."
-              icon={<Clock className="w-12 h-12 text-blue-500" />}
-              highlighted={false}
-              link="#"
-              cta="Support Plans"
-            />
+            <ServiceCard title="Web Development" description="Custom websites and web applications designed for your specific business needs." icon={<Code className="w-12 h-12 text-purple-500" />} highlighted={false} link="#" cta="Our Solutions" />
+            <ServiceCard title="Mobile Apps" description="Native and cross-platform mobile applications that engage your customers." icon={<Smartphone className="w-12 h-12 text-indigo-500" />} highlighted={false} link="#" cta="View Apps" />
+            <ServiceCard title="Web Hosting" description="Reliable and secure hosting solutions with 99.9% uptime guarantee." icon={<Server className="w-12 h-12 text-green-500" />} highlighted={false} link="#" cta="Hosting Plans" />
+            <ServiceCard title="Database Solutions" description="Scalable database design and management for your growing business." icon={<Database className="w-12 h-12 text-orange-500" />} highlighted={false} link="#" cta="Explore" />
+            <ServiceCard title="Cloud Infrastructure" description="Optimize your cloud infrastructure for performance, security, and cost efficiency." icon={<Cloud className="w-12 h-12 text-teal-500" />} highlighted={false} link="#" cta="Cloud Services" />
+            <ServiceCard title="Business Analytics" description="Data-driven insights to help you make better business decisions." icon={<BarChart3 className="w-12 h-12 text-red-500" />} highlighted={false} link="#" cta="Analytics" />
+            <ServiceCard title="24/7 Support" description="Round-the-clock technical support to keep your systems running smoothly." icon={<Clock className="w-12 h-12 text-blue-500" />} highlighted={false} link="#" cta="Support Plans" />
           </div>
         </div>
       </section>
@@ -210,10 +117,7 @@ const ServicesPage: React.FC = () => {
           {testimonials.map((testimonial, index) => (
             <TestimonialCard 
               key={index}
-              name={testimonial.name}
-              role={testimonial.role}
               content={testimonial.content}
-              image={testimonial.image}
             />
           ))}
         </div>
