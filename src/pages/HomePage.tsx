@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Bot, BarChart3, Server } from 'lucide-react';
+import { ArrowRight, Bot, BarChart3, Server, Code, Smartphone } from 'lucide-react';
 import HeroImage from '../components/HeroImage';
 import ServiceCard from '../components/ServiceCard';
 
@@ -76,21 +76,12 @@ const HomePage: React.FC = () => {
           <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <ServiceCard 
-            title="ScanMe: Digital Menu" 
-            description="Revolutionize your restaurant with QR-based digital menus that enhance customer experience and streamline operations."
-            icon={<Bot className="w-12 h-12 text-blue-500" />}
-            highlighted={true}
-            link="/product"
-            cta="Learn More"
-          />
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           <ServiceCard 
             title="Web Development" 
             description="Custom web applications and websites built with the latest technologies, optimized for performance and user experience."
-            icon={<BarChart3 className="w-12 h-12 text-purple-500" />}
-            highlighted={false}
+            icon={<Code className="w-12 h-12 text-blue-500" />}
+            highlighted={true}
             link="/services"
             cta="Our Solutions"
           />
@@ -98,10 +89,28 @@ const HomePage: React.FC = () => {
           <ServiceCard 
             title="Web Hosting" 
             description="Reliable, secure, and scalable hosting solutions to ensure your applications run smoothly with maximum uptime."
-            icon={<Server className="w-12 h-12 text-green-500" />}
-            highlighted={false}
+            icon={<Server className="w-12 h-12 text-purple-500" />}
+            highlighted={true}
             link="/services"
             cta="Hosting Plans"
+          />
+          
+          <ServiceCard 
+            title="Mobile Apps" 
+            description="Native and cross-platform mobile applications that engage your customers and drive business growth."
+            icon={<Smartphone className="w-12 h-12 text-green-500" />}
+            highlighted={true}
+            link="/services"
+            cta="View Apps"
+          />
+          
+          <ServiceCard 
+            title="Business Analytics" 
+            description="Data-driven insights and analytics to help you make informed business decisions and optimize performance."
+            icon={<BarChart3 className="w-12 h-12 text-orange-500" />}
+            highlighted={true}
+            link="/services"
+            cta="Analytics"
           />
         </div>
         

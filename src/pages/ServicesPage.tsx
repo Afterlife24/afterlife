@@ -27,52 +27,8 @@ const ServicesPage: React.FC = () => {
           </p>
         </div>
       </section>
-      
-      {/* Main Product - ScanMe */}
-      <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 p-8 md:p-12 rounded-3xl shadow-lg border border-blue-100 dark:border-blue-800">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="mb-6 inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full">
-                <Bot className="w-5 h-5 mr-2" />
-                <span className="font-semibold">Our Flagship Product</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">ScanMe: Digital Menu for Restaurants</h2>
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                Revolutionize your restaurant's dining experience with our QR-based digital menu solution. 
-                ScanMe helps restaurant owners streamline operations while providing customers with an 
-                interactive, engaging menu experience.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                {["QR code integration", "Real-time menu updates", "Customer analytics", "Multi-language support"].map((feature, i) => (
-                  <div key={i} className="flex items-start">
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center">
-                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                    </div>
-                    <p className="ml-3 text-gray-700 dark:text-gray-300">{feature}</p>
-                  </div>
-                ))}
-              </div>
-              <a href="/product" className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all">
-                Learn More
-              </a>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src="https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="ScanMe digital menu in action" 
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Other Services */}
+
+      {/* All Services */}
       <section className="py-16 px-4 md:px-8 bg-gray-100 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -82,13 +38,13 @@ const ServicesPage: React.FC = () => {
             </p>
             <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ServiceCard 
-              title="ScanMe: Digital Menu" 
+            <ServiceCard
+              title="ScanMe: Digital Menu"
               description="QR-based digital menus with analytics and real-time updates for restaurants."
               icon={<Bot className="w-12 h-12 text-blue-500" />}
-              highlighted={true}
+              highlighted={false}
               link="/product"
               cta="Learn More"
             />
@@ -102,7 +58,7 @@ const ServicesPage: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Testimonials */}
       <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
@@ -112,10 +68,10 @@ const ServicesPage: React.FC = () => {
           </p>
           <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <TestimonialCard 
+            <TestimonialCard
               key={index}
               content={testimonial.content}
             />
