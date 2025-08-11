@@ -8,8 +8,9 @@ const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col w-full">
       
-      <section className="py-16 md:py-24 px-4 md:px-8 max-w-7xl mx-auto relative overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="pt-8 lg:pt-6 pb-16 lg:pb-24 px-4 md:px-8 max-w-7xl mx-auto relative overflow-hidden">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:-mt-3">
+
           <div className="z-10">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
               Empowering Institutions and Businesses with Advanced AI
@@ -30,7 +31,7 @@ const HomePage: React.FC = () => {
 </div>
 
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center max">
             <HeroImage />
           </div>
         </div>
