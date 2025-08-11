@@ -1,7 +1,10 @@
 import React from 'react';
-import { Check, X, Smartphone, BarChart3, Users, Globe } from 'lucide-react';
-import PricingCard from '../components/PricingCard';
+import { Smartphone, BarChart3, Users, Globe } from 'lucide-react';
 import FAQItem from '../components/FAQItem';
+
+// Import local images
+import DigitalMenuImg from '../assests/scanme1.jpg';
+import RestaurantDemoImg from '../assests/scanme2.jpg';
 
 const ProductPage: React.FC = () => {
   const features = [
@@ -122,9 +125,9 @@ const ProductPage: React.FC = () => {
           </div>
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img 
-              src="https://images.pexels.com/photos/4350111/pexels-photo-4350111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              src={DigitalMenuImg}
               alt="ScanMe digital menu on smartphone" 
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover max-h-80"
             />
           </div>
         </div>
@@ -158,7 +161,7 @@ const ProductPage: React.FC = () => {
       </section>
       
       {/* How It Works */}
-      <section id="how-it-works"  className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+      <section id="how-it-works" className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">How ScanMe Works</h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -200,17 +203,14 @@ const ProductPage: React.FC = () => {
         </div>
       </section>
       
-      {/* Pricing */}
-      
-      
       {/* Demo Request */}
       <section id="demo" className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img 
-              src="https://images.pexels.com/photos/5920021/pexels-photo-5920021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              src={RestaurantDemoImg}
               alt="Restaurant using ScanMe" 
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover max-h-80"
             />
           </div>
           <div>
