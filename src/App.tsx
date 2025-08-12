@@ -5,7 +5,11 @@ import Footer from './components/Footer';
 import NotificationBar from './components/NotificationBar';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
-import ServicesPage from './pages/ServicesPage';
+import WebDevelopmentPage from './pages/WebDevelopmentPage';
+import WebHostingPage from './pages/WebHostingPage';
+import MobileAppsPage from './pages/MobileAppsPage';
+import BusinessAnalyticsPage from './pages/BusinessAnalyticsPage';
+import FaceSitePage from './pages/FaceSitePage';
 import ProductPage from './pages/ProductPage';
 import ScrollToTop from './utils/ScrollToTop';
 
@@ -42,7 +46,11 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/web-development" element={<WebDevelopmentPage />} />
+            <Route path="/web-hosting" element={<WebHostingPage />} />
+            <Route path="/mobile-apps" element={<MobileAppsPage />} />
+            <Route path="/business-analytics" element={<BusinessAnalyticsPage />} />
+            <Route path="/facesite" element={<FaceSitePage />} />
             <Route path="/product" element={<ProductPage />} />
           </Routes>
         </main>

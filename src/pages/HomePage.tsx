@@ -1,53 +1,65 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Bot, BarChart3, Server, Code, Smartphone } from 'lucide-react';
-import HeroImage from '../components/HeroImage';
+import Hero from '../components/HeroImage';
 import ServiceCard from '../components/ServiceCard';
 
 const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col w-full">
       
-      <section className="pt-8 lg:pt-6 pb-16 lg:pb-24 px-4 md:px-8 max-w-7xl mx-auto relative overflow-hidden">
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:-mt-3">
+      <section className="pt-10 lg:pt-20 pb-16 lg:pb-24 px-4 md:px-8 max-w-7xl mx-auto relative overflow-hidden">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-          <div className="z-10">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
-              Empowering Institutions and Businesses with Advanced AI
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-              Transform your business with cutting-edge AI solutions designed for real-world challenges.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/services" className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all flex items-center justify-center">
-    Our Services
-    <ArrowRight className="ml-2 h-5 w-5" />
-  </Link>
-  <Link to="/product" className="px-8 py-3 bg-transparent border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-600/10 rounded-lg font-medium transition-all flex items-center justify-center">
-    Explore ScanMe
-    <ArrowRight className="ml-2 h-5 w-5" />
-  </Link>
-  
-</div>
+    {/* Left Content */}
+    <div className="z-10 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+      <h1 className="font-bold leading-snug md:leading-tight mb-6">
+        <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600 animate-fadeIn">
+          Build. Automate. Scale.
+        </span>
+        <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600 animate-fadeIn delay-200">
+          AfterLife Makes It Happen
+        </span>
+      </h1>
 
-          </div>
-          <div className="flex justify-center max">
-            <HeroImage />
-          </div>
-        </div>
-      </section>
+      <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0">
+        Accelerate your journey from idea to market with fast delivery, smart automation, 
+        and scalable cloud systems.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <Link 
+          to="/facesite" 
+          className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all flex items-center justify-center shadow-lg"
+        >
+          Explore our new Product - FaceSite
+          <ArrowRight className="ml-2 h-5 w-5" />
+        </Link>
+      </div>
+    </div>
+
+    {/* Right Image */}
+    <div className="flex justify-center lg:justify-end">
+      <div className="w-full max-w-lg">
+        <Hero/>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
       {/* Mission & Vision */}
       <section className="py-16 px-4 md:px-8 bg-gray-100 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Mission & Vision</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Products</h2>
             <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg transform transition-transform hover:scale-105">
-              <h3 className="text-2xl font-bold mb-4 text-blue-600">Our Mission</h3>
+              <h3 className="text-2xl font-bold mb-4 text-blue-600">FaceSite</h3>
               <p className="text-gray-700 dark:text-gray-300">
                 To empower businesses and institutions with accessible AI solutions that drive efficiency, 
                 innovation, and growth. We believe in democratizing advanced technology to solve real-world 
@@ -56,7 +68,7 @@ const HomePage: React.FC = () => {
             </div>
             
             <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg transform transition-transform hover:scale-105">
-              <h3 className="text-2xl font-bold mb-4 text-purple-600">Our Vision</h3>
+              <h3 className="text-2xl font-bold mb-4 text-purple-600">ScanMe</h3>
               <p className="text-gray-700 dark:text-gray-300">
                 A future where AI seamlessly enhances every aspect of business operations, enabling 
                 organizations of all sizes to achieve their full potential through intelligent, 
@@ -78,21 +90,30 @@ const HomePage: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+          <ServiceCard 
+            title="AI Services" 
+            description="Cutting-edge AI solutions that understand, respond, and adapt — transforming how you connect, automate, and innovate."
+            icon={<Bot className="w-12 h-12 text-orange-500" />}
+            highlighted={true}
+            link="/business-analytics"
+            cta="Learn More"
+          />
           <ServiceCard 
             title="Web Development" 
             description="Custom web applications and websites built with the latest technologies, optimized for performance and user experience."
-            icon={<Code className="w-12 h-12 text-blue-500" />}
+            icon={<Code  className="w-12 h-12 text-blue-500" />}
             highlighted={true}
-            link="/services"
-            cta="Our Solutions"
+            link="/web-development"
+            cta="Learn More"
           />
           
           <ServiceCard 
-            title="Web Hosting" 
+            title="Cloud Services" 
             description="Reliable, secure, and scalable hosting solutions to ensure your applications run smoothly with maximum uptime."
             icon={<Server className="w-12 h-12 text-purple-500" />}
             highlighted={true}
-            link="/services"
+            link="/web-hosting"
             cta="Hosting Plans"
           />
           
@@ -101,23 +122,16 @@ const HomePage: React.FC = () => {
             description="Native and cross-platform mobile applications that engage your customers and drive business growth."
             icon={<Smartphone className="w-12 h-12 text-green-500" />}
             highlighted={true}
-            link="/services"
-            cta="View Apps"
+            link="/mobile-apps"
+            cta="Learn More"
           />
           
-          <ServiceCard 
-            title="Business Analytics" 
-            description="Data-driven insights and analytics to help you make informed business decisions and optimize performance."
-            icon={<BarChart3 className="w-12 h-12 text-orange-500" />}
-            highlighted={true}
-            link="/services"
-            cta="Analytics"
-          />
+          
         </div>
         
         <div className="text-center mt-12">
-          <Link to="/services" className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all">
-            View All Services
+          <Link to="/facesite" className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all">
+            Discover FaceSite - Web 4.0
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </div>

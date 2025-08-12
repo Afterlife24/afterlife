@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                 <Link to="/about" className="hover:text-blue-500 transition-colors">About Us</Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-blue-500 transition-colors">Services</Link>
+                <Link to="/facesite" className="hover:text-blue-500 transition-colors">FaceSite</Link>
               </li>
               <li>
                 <Link to="/product" className="hover:text-blue-500 transition-colors">ScanMe</Link>
@@ -57,22 +57,22 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                ScanMe: Digital Menu
+                <Link to="/facesite" className="hover:text-blue-500 transition-colors">FaceSite: AI Avatar</Link>
               </li>
               <li>
-                Web Development
+                <Link to="/product" className="hover:text-blue-500 transition-colors">ScanMe: Digital Menu</Link>
               </li>
               <li>
-                Web Hosting
+                <Link to="/web-development" className="hover:text-blue-500 transition-colors">Web Development</Link>
               </li>
               <li>
-                Mobile Apps
+                <Link to="/web-hosting" className="hover:text-blue-500 transition-colors">Web Hosting</Link>
               </li>
               <li>
-                Business Analytics
+                <Link to="/mobile-apps" className="hover:text-blue-500 transition-colors">Mobile Apps</Link>
               </li>
               <li>
-                Cloud Solutions
+                <Link to="/business-analytics" className="hover:text-blue-500 transition-colors">Business Analytics</Link>
               </li>
             </ul>
           </div>

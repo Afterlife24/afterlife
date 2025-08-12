@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Bot, Sun, Moon } from 'lucide-react';
 import logo from '../assests/removed.png';
 
+
 interface NavbarProps {
   darkMode: boolean;
   toggleDarkMode: () => void;
@@ -16,7 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
+    { name: 'FaceSite', path: '/facesite' },
     { name: 'Scanme', path: '/product' },
   ];
   
