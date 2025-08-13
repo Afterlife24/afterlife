@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Bot, Sparkles, Globe, Zap, Users, Shield } from 'lucide-react';
 
+// Import your video & placeholder image
+import demoVideo from '../assests/facesite.mp4';
+import demoImage from '../assests/face.jpg';
+
 const FaceSitePage: React.FC = () => {
+  const [playVideo, setPlayVideo] = useState(false);
+
+  const handlePlayVideo = () => {
+    setPlayVideo(true);
+  };
+
   const features = [
     {
       title: "AI Avatar Representation",
@@ -36,52 +46,6 @@ const FaceSitePage: React.FC = () => {
     }
   ];
 
-  const packages = [
-    {
-      name: "Basic Avatar",
-      price: "€199",
-      description: "Essential AI avatar for small businesses",
-      features: [
-        "Basic AI avatar",
-        "Standard responses",
-        "Email integration",
-        "Basic analytics",
-        "1 language support",
-        "Email support"
-      ]
-    },
-    {
-      name: "Smart Avatar",
-      price: "€399",
-      description: "Advanced AI with learning capabilities",
-      features: [
-        "Advanced AI avatar",
-        "Learning capabilities",
-        "CRM integration",
-        "Advanced analytics",
-        "3 language support",
-        "Priority support",
-        "Custom personality"
-      ],
-      highlighted: true
-    },
-    {
-      name: "Enterprise Avatar",
-      price: "€799",
-      description: "Full-featured AI for large organizations",
-      features: [
-        "Enterprise AI avatar",
-        "Deep learning",
-        "Full system integration",
-        "Comprehensive analytics",
-        "Unlimited languages",
-        "24/7 support",
-        "Custom training",
-        "White-label solution"
-      ]
-    }
-  ];
-
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
@@ -103,26 +67,38 @@ const FaceSitePage: React.FC = () => {
                   Get Your AI Avatar
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <Link 
-                  to="#demo" 
+                <button 
+                  onClick={handlePlayVideo}
                   className="inline-flex items-center px-8 py-3 bg-transparent border border-white text-white hover:bg-white/10 rounded-lg font-medium transition-all"
                 >
-                  See Demo
+                  See Preview
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </button>
               </div>
             </div>
+
+            {/* Video / Image */}
             <div className="rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="AI Avatar representing website" 
-                className="w-full h-auto object-cover"
-              />
+              {playVideo ? (
+                <video 
+                  src={demoVideo} 
+                  className="w-full h-auto object-cover" 
+                  autoPlay 
+                  
+                  controls 
+                />
+              ) : (
+                <img 
+                  src={demoImage} 
+                  alt="AI Avatar representing website" 
+                  className="w-full h-auto object-cover cursor-pointer"
+                  onClick={handlePlayVideo}
+                />
+              )}
             </div>
           </div>
         </div>
       </section>
-
       {/* What is FaceSite */}
       <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
