@@ -362,85 +362,69 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-16 px-4 md:px-8 bg-gray-100 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Case Studies</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Real-world success stories showcasing how our solutions transform businesses
-            </p>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* FaceSite Case Study */}
-            <Link 
-              to="/case-study/facesite" 
-              className="group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className="aspect-video bg-gradient-to-br from-cyan-500 to-blue-600 relative overflow-hidden">
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
-                    <h3 className="text-lg font-bold text-gray-900">FaceSite: Web 4.0 Revolution</h3>
-                    <p className="text-sm text-gray-700">Transforming static websites into intelligent entities</p>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-medium text-cyan-600 bg-cyan-100 dark:bg-cyan-900/40 px-3 py-1 rounded-full">
-                    AI Avatar Technology
-                  </span>
-                  <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-cyan-600 transition-colors" />
-                </div>
-                <h4 className="text-xl font-bold mb-2 group-hover:text-cyan-600 transition-colors">
-                  Why FaceSite Matters
-                </h4>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Discover how FaceSite transforms traditional websites into human-like, interactive experiences that engage visitors and drive conversions.
-                </p>
-                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                  <span>Read Case Study</span>
-                </div>
-              </div>
-            </Link>
+      {/* Case Studies Section - Compact, No Images */}
+<section className="py-16 px-4 md:px-8 bg-gray-100 dark:bg-gray-800">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">Case Studies</h2>
+      <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Success stories that show how our solutions create measurable impact.
+      </p>
+      <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+    </div>
 
-            {/* ScanMe Case Study */}
-            <Link 
-              to="/case-study/scanme" 
-              className="group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className="aspect-video bg-gradient-to-br from-purple-500 to-pink-600 relative overflow-hidden">
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
-                    <h3 className="text-lg font-bold text-gray-900">ScanMe: Digital Menu Revolution</h3>
-                    <p className="text-sm text-gray-700">Modernizing restaurant experiences with QR technology</p>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-medium text-purple-600 bg-purple-100 dark:bg-purple-900/40 px-3 py-1 rounded-full">
-                    Restaurant Technology
-                  </span>
-                  <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-purple-600 transition-colors" />
-                </div>
-                <h4 className="text-xl font-bold mb-2 group-hover:text-purple-600 transition-colors">
-                  Why ScanMe Matters
-                </h4>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Learn how ScanMe revolutionizes restaurant operations with smart QR-based digital menus and real-time order tracking.
-                </p>
-                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                  <span>Read Case Study</span>
-                </div>
-              </div>
-            </Link>
-          </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+      
+      {/* FaceSite Card */}
+      <Link
+        to="/case-study/facesite"
+        className="group bg-white dark:bg-gray-900 rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+      >
+        <span className="inline-flex items-center px-3 py-1 text-sm font-medium bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full mb-4">
+          AI Avatar Technology
+        </span>
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">
+          FaceSite: Web 4.0 Revolution
+        </h3>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 line-clamp-3">
+          Transforming static websites into intelligent, human-like experiences
+          with emotionally aware AI that guides, assists, and personalizes user
+          journeys.
+        </p>
+        <div className="mt-4 flex items-center text-sm font-medium text-blue-600 group-hover:underline">
+          Read Case Study
+          <ArrowRight className="ml-1 h-4 w-4" />
         </div>
-      </section>
+      </Link>
+
+      {/* ScanMe Card */}
+      <Link
+        to="/case-study/scanme"
+        className="group bg-white dark:bg-gray-900 rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+      >
+        <span className="inline-flex items-center px-3 py-1 text-sm font-medium bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full mb-4">
+          Restaurant Technology
+        </span>
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-purple-600 transition-colors">
+          ScanMe: Digital Menu Revolution
+        </h3>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-3 line-clamp-3">
+          Modernizing restaurant operations with QR-based menus, real-time order
+          tracking, and multilingual customer experiences that boost efficiency.
+        </p>
+        <div className="mt-4 flex items-center text-sm font-medium text-purple-600 group-hover:underline">
+          Read Case Study
+          <ArrowRight className="ml-1 h-4 w-4" />
+        </div>
+      </Link>
+
+      {/* Additional Case Study Placeholder */}
+      
+
+    </div>
+  </div>
+</section>
+
       {/* About Preview */}
       <section className="py-16 px-4 md:px-8 bg-gray-100 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
