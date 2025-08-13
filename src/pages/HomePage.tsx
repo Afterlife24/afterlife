@@ -50,34 +50,55 @@ const HomePage: React.FC = () => {
 
 
       {/* Mission & Vision */}
-      <section className="py-16 px-4 md:px-8 bg-gray-100 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Products</h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg transform transition-transform hover:scale-105">
-              <h3 className="text-2xl font-bold mb-4 text-blue-600">FaceSite</h3>
-              <p className="text-gray-700 dark:text-gray-300">
-                To empower businesses and institutions with accessible AI solutions that drive efficiency, 
-                innovation, and growth. We believe in democratizing advanced technology to solve real-world 
-                challenges across all industries.
-              </p>
-            </div>
-            
-            <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg transform transition-transform hover:scale-105">
-              <h3 className="text-2xl font-bold mb-4 text-purple-600">ScanMe</h3>
-              <p className="text-gray-700 dark:text-gray-300">
-                A future where AI seamlessly enhances every aspect of business operations, enabling 
-                organizations of all sizes to achieve their full potential through intelligent, 
-                ethical, and user-friendly technology solutions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+<section className="py-16 px-4 md:px-8 bg-gray-100 dark:bg-gray-800">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Products</h2>
+      <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      {/* FaceSite Card */}
+      <Link 
+        to="/facesite" 
+        className="block bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl"
+      >
+        <h3 className="text-2xl font-bold mb-4 text-blue-600">FaceSite</h3>
+        <p className="text-gray-700 dark:text-gray-300 mb-6">
+          A Web 4.0 platform that transforms websites into human-like, interactive experiences. 
+          FaceSite uses emotionally intelligent AI assistants to talk, guide, and personalize 
+          every visitor’s journey — helping businesses, universities, and hospitals deliver 
+          instant, friendly, and data-driven support without human bottlenecks.
+        </p>
+        <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all">
+          Learn More
+        </button>
+      </Link>
+
+      {/* ScanMe Card */}
+      <Link 
+        to="/product" 
+        className="block bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl"
+      >
+        <h3 className="text-2xl font-bold mb-4 text-purple-600">ScanMe</h3>
+          <p className="text-gray-700 dark:text-gray-300 mb-6">
+    A smart QR-based digital menu and order tracking system for restaurants. 
+    Customers can scan a QR to view menus instantly, place orders, and see 
+    estimated preparation times — whether ordering online or at the table. 
+    Online orders trigger email notifications with ready-time updates, 
+    while owners get real-time analytics, multi-language support, and 
+    instant menu updates without printing costs.
+  </p>
+        <button className="mt-4 px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all">
+          Learn More
+        </button>
+      </Link>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Services Preview */}
       <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">

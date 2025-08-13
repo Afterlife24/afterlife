@@ -159,6 +159,64 @@ const ProductPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Case Study */}
+<section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+  <div className="text-center mb-12">
+    <h2 className="text-3xl md:text-4xl font-bold mb-4">Why ScanMe Matters</h2>
+    <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+      How we solve real problems for restaurants and their customers
+    </p>
+    <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {/* Problem */}
+    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+      <h3 className="text-xl font-bold mb-4 text-blue-600">The Problem</h3>
+      <ul className="space-y-2 text-gray-600 dark:text-gray-400 list-disc list-inside">
+        <li>Paper menus require constant reprinting for updates.</li>
+        <li>No easy multi-language support for diverse customers.</li>
+        <li>No data insights on customer preferences and ordering patterns.</li>
+        <li>Longer wait times due to staff manually updating customers.</li>
+        <li>Online orders lack accurate ready-time updates.</li>
+      </ul>
+    </div>
+
+    {/* Solution */}
+    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+      <h3 className="text-xl font-bold mb-4 text-green-600">Our Solution</h3>
+      <ul className="space-y-2 text-gray-600 dark:text-gray-400 list-disc list-inside">
+        <li>QR code instantly opens a mobile-optimized digital menu.</li>
+        <li>Real-time menu updates without reprinting.</li>
+        <li>Live order tracking with estimated preparation time.</li>
+        <li>Email notifications for online orders with ready-time estimates.</li>
+        <li>Multi-language support with automatic translation.</li>
+        <li>POS integration for seamless syncing.</li>
+      </ul>
+    </div>
+
+    {/* Benefits */}
+    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+      <h3 className="text-xl font-bold mb-4 text-purple-600">Benefits</h3>
+      <p className="text-gray-600 dark:text-gray-400 font-semibold mb-2">For Business Owners:</p>
+      <ul className="mb-4 space-y-1 text-gray-600 dark:text-gray-400 list-disc list-inside">
+        <li>Cost savings — no printing costs.</li>
+        <li>Reduced staff load with automated updates.</li>
+        <li>Data-driven menu & order optimization.</li>
+        <li>Brand-customizable digital menus.</li>
+      </ul>
+      <p className="text-gray-600 dark:text-gray-400 font-semibold mb-2">For Customers:</p>
+      <ul className="space-y-1 text-gray-600 dark:text-gray-400 list-disc list-inside">
+        <li>Instant access to menus with QR scan.</li>
+        <li>Accurate order time estimates.</li>
+        <li>Email notifications for online orders.</li>
+        <li>Multi-language viewing options.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
       
       {/* How It Works */}
       <section id="how-it-works" className="py-16 px-4 md:px-8 max-w-7xl mx-auto">

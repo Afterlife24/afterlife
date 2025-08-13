@@ -195,7 +195,58 @@ const FaceSitePage: React.FC = () => {
 
       {/* Packages */}
       
+{/* Case Study */}
+      <section className="py-16 px-4 md:px-8 bg-white dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why FaceSite Matters</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto">
+              How FaceSite transforms websites from static pages into intelligent, human-like guides for better engagement and conversions.
+            </p>
+            <div className="w-20 h-1 bg-cyan-600 mx-auto mt-4"></div>
+          </div>
 
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Problem & Solution */}
+            <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-semibold mb-4 text-cyan-600">The Problem</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
+                Most websites today are static, confusing, and inefficient — especially for students, patients, or customers who just want quick answers. 
+                They can’t guide visitors in real-time, provide a human-like experience, or adapt to different user needs without manual intervention.
+              </p>
+              <h3 className="text-2xl font-semibold mb-4 text-cyan-600">Our Solution</h3>
+              <p className="text-gray-600 dark:text-gray-400">
+                FaceSite brings Web 4.0 to life — websites that talk, guide, and feel human. It adds an emotionally intelligent AI assistant that interacts in real-time, 
+                answers questions, gives directions, provides personalized guidance, and turns a standard website into a conversational experience.
+              </p>
+            </div>
+
+            {/* Advantages */}
+            <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-semibold mb-4 text-cyan-600">Advantages</h3>
+              
+              <div className="mb-6">
+                <h4 className="text-lg font-bold text-gray-700 dark:text-gray-300 mb-2">For Business Owners</h4>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
+                  <li>Deep personalization at scale without extra staff</li>
+                  <li>Higher engagement and conversion rates</li>
+                  <li>One-to-one marketing with data-driven insights</li>
+                  <li>Stronger brand storytelling with interactive experiences</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-bold text-gray-700 dark:text-gray-300 mb-2">For Customers</h4>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
+                  <li>Instant, friendly, human-like assistance 24/7</li>
+                  <li>Clear guidance for complex tasks</li>
+                  <li>More enjoyable, efficient, and personalized browsing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* How It Works */}
       <section id="demo" className="py-16 px-4 md:px-8 bg-gray-100 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
@@ -287,7 +338,8 @@ const FaceSitePage: React.FC = () => {
       </section>
 
       {/* Packages */}
-      
+            
+
 
       {/* Use Cases */}
       <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
