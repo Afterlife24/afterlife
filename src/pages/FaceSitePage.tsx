@@ -12,7 +12,6 @@ const FaceSitePage: React.FC = () => {
   const handlePlayVideo = () => {
     setPlayVideo(true);
   };
-
   const features = [
     {
       title: "AI Avatar Representation",
