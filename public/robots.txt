@@ -1,0 +1,8 @@
+# robots.txt for https://afterlife.org.in
+# Defines rules for how search engine crawlers access the website.
+
+# Specify which crawler the rule applies to (* means all crawlers)
+User-agent: *
+
+# Define access permissions for the site
+Allow: /
