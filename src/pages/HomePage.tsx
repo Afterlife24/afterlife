@@ -321,7 +321,7 @@ const HomePage: React.FC = () => {
             icon={<Bot className="w-12 h-12 text-orange-500" />}
             highlighted={true}
             link="/business-analytics"
-            cta="Learn More"
+            cta="Explore our AI services"
           />
           <ServiceCard 
             title="Web Development" 
@@ -329,7 +329,7 @@ const HomePage: React.FC = () => {
             icon={<Code  className="w-12 h-12 text-blue-500" />}
             highlighted={true}
             link="/web-development"
-            cta="Learn More"
+            cta="Discover our web development solutions"
           />
           
           <ServiceCard 
@@ -338,7 +338,7 @@ const HomePage: React.FC = () => {
             icon={<Server className="w-12 h-12 text-purple-500" />}
             highlighted={true}
             link="/web-hosting"
-            cta="Hosting Plans"
+            cta="View our cloud hosting plans"
           />
           
           <ServiceCard 
@@ -347,7 +347,7 @@ const HomePage: React.FC = () => {
             icon={<Smartphone className="w-12 h-12 text-green-500" />}
             highlighted={true}
             link="/mobile-apps"
-            cta="Learn More"
+            cta="View our mobile app development services"
           />
           
           
