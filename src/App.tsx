@@ -88,6 +88,7 @@ import FaceSitePage from './pages/FaceSitePage';
 import ProductPage from './pages/ProductPage';
 import FaceSiteCaseStudy from './pages/FaceSiteCaseStudy';
 import ScanMeCaseStudy from './pages/ScanMeCaseStudy';
+import PortfolioPage from './pages/PortfolioPage';
 import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
@@ -131,6 +132,7 @@ function App() {
             <Route path="/product" element={<ProductPage />} />
             <Route path="/case-study/facesite" element={<FaceSiteCaseStudy />} />
             <Route path="/case-study/scanme" element={<ScanMeCaseStudy />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
           </Routes>
         </main>
         <Footer />

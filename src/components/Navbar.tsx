@@ -17,6 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
+    { name: 'Portfolio', path: '/portfolio' },
     { name: 'FaceSite', path: '/facesite' },
     { name: 'Scanme', path: '/product' },
   ];
