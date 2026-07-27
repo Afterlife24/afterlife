@@ -215,7 +215,7 @@ const PortfolioPage: React.FC = () => {
 
   const categories: PortfolioCategory[] = [
     {
-      title: "Automations",
+      title: "AI Automations",
       eyebrow: "AI & Automation",
       items: [
         {
@@ -229,7 +229,7 @@ const PortfolioPage: React.FC = () => {
       ],
     },
     {
-      title: "Websites",
+      title: "Web Applications",
       eyebrow: "Web Development",
       items: [
         {
