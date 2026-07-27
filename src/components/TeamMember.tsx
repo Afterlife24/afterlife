@@ -14,7 +14,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, image, bio }) => {
       <img 
         src={image} 
         alt={name} 
-        className="w-full h-72 object-cover object-center"
+        className="w-full h-72 object-cover object-top"
       />
       <div className="p-6">
         <h3 className="text-xl font-bold mb-1">{name}</h3>
