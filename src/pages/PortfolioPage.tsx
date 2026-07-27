@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { ExternalLink, Globe, Smartphone, QrCode, Users, Utensils, Car, Heart, Building2 } from 'lucide-react';
+import { ExternalLink, Globe, Smartphone, QrCode, Users, Utensils, Car, Heart, Building2, Cpu, Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 import type { LucideIcon } from 'lucide-react';
@@ -14,10 +14,16 @@ interface PortfolioItem {
   icon: LucideIcon;
   name: string;
   description: string;
-  category: 'website' | 'service' | 'mobile-app' | 'analytics';
   color: string;
   url?: string;
   technologies: string[];
+  status?: 'live' | 'ongoing';
+}
+
+interface PortfolioCategory {
+  title: string;
+  eyebrow: string;
+  items: PortfolioItem[];
 }
 
 // ─── Stat Card ───────────────────────────────────────────────────────────────────
@@ -130,15 +136,22 @@ function PortfolioCard({ item, dimmed, onHoverStart, onHoverEnd }: CardProps) {
         className="pointer-events-none absolute inset-y-0 left-0 w-[55%] -translate-x-full -skew-x-12 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[280%]"
       />
 
-      {/* Icon badge */}
-      <div
-        className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl"
-        style={{
-          background: `${item.color}20`,
-          boxShadow: `inset 0 0 0 1px ${item.color}40`,
-        }}
-      >
-        <Icon size={22} strokeWidth={1.9} style={{ color: item.color }} />
+      {/* Icon badge + status */}
+      <div className="relative z-10 flex items-center justify-between">
+        <div
+          className="flex h-12 w-12 items-center justify-center rounded-xl"
+          style={{
+            background: `${item.color}20`,
+            boxShadow: `inset 0 0 0 1px ${item.color}40`,
+          }}
+        >
+          <Icon size={22} strokeWidth={1.9} style={{ color: item.color }} />
+        </div>
+        {item.status === 'ongoing' && (
+          <span className="px-2.5 py-1 text-xs font-medium rounded-full bg-yellow-500/15 text-yellow-400 border border-yellow-500/30">
+            In Progress
+          </span>
+        )}
       </div>
 
       {/* Content */}
@@ -173,8 +186,12 @@ function PortfolioCard({ item, dimmed, onHoverStart, onHoverEnd }: CardProps) {
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative z-10 inline-flex items-center gap-1.5 text-sm font-medium mt-1"
-          style={{ color: item.color }}
+          className="relative z-10 inline-flex items-center gap-1.5 text-base font-semibold mt-2 px-4 py-2 rounded-lg transition-all duration-200 hover:scale-105"
+          style={{
+            color: item.color,
+            background: `${item.color}15`,
+            border: `1px solid ${item.color}40`,
+          }}
         >
           View Project <ExternalLink className="h-3.5 w-3.5" />
         </a>
@@ -196,86 +213,132 @@ function PortfolioCard({ item, dimmed, onHoverStart, onHoverEnd }: CardProps) {
 const PortfolioPage: React.FC = () => {
   const [hoveredName, setHoveredName] = useState<string | null>(null);
 
-  const portfolioItems: PortfolioItem[] = [
+  const categories: PortfolioCategory[] = [
     {
-      icon: QrCode,
-      name: "ScanMe - Royal Bangla",
-      description: "QR-based digital menu and ordering system for Royal Bangla restaurant. Streamlines the dining experience with contactless ordering and analytics.",
-      category: "service",
-      color: "#f59e0b",
-      url: "https://www.royalbangla-scanme.afterlife.org.in",
-      technologies: ["React", "Node.js", "QR Integration"],
+      title: "Automations",
+      eyebrow: "AI & Automation",
+      items: [
+        {
+          icon: Cpu,
+          name: "Autonomiq",
+          description: "Corporate website for Autonomiq, a UAE-based automation tech company. Professional design reflecting innovation and enterprise solutions.",
+          color: "#818cf8",
+          url: "https://autonomiq.ae/",
+          technologies: ["React", "Modern UI", "Performance"],
+        },
+      ],
     },
     {
-      icon: Utensils,
-      name: "Royal Bangla",
-      description: "Full restaurant website with online presence, menu showcase, and reservation system for a popular Indian restaurant.",
-      category: "website",
-      color: "#f472b6",
-      url: "https://www.royalbangla-royalbangla.afterlife.org.in/",
-      technologies: ["React", "Tailwind CSS", "Vite"],
+      title: "Websites",
+      eyebrow: "Web Development",
+      items: [
+        {
+          icon: Utensils,
+          name: "Taj Mahal",
+          description: "Restaurant website with menu presentation, online ordering integration, and a vibrant brand identity.",
+          color: "#e879f9",
+          url: "https://www.tajmahal-tajmahal.afterlife.org.in/",
+          technologies: ["React", "Tailwind CSS", "Vite"],
+        },
+        {
+          icon: Utensils,
+          name: "Royal Bangla",
+          description: "Full restaurant website with online presence, menu showcase, and reservation system for a popular Indian restaurant.",
+          color: "#f472b6",
+          url: "https://www.royalbangla-royalbangla.afterlife.org.in/",
+          technologies: ["React", "Tailwind CSS", "Vite"],
+        },
+        {
+          icon: Globe,
+          name: "GNI App",
+          description: "Modern web application with clean UI and optimized user experience for the GNI platform.",
+          color: "#60a5fa",
+          url: "https://www.gniapp.com/",
+          technologies: ["React", "Web App", "UI/UX"],
+        },
+        {
+          icon: Smartphone,
+          name: "SmartphoneCity",
+          description: "Website for a smartphone retail business with product showcase and customer engagement features.",
+          color: "#38bdf8",
+          url: "https://www.smartphonecity.afterlife.org.in/",
+          technologies: ["React", "E-commerce", "Responsive"],
+        },
+        {
+          icon: Utensils,
+          name: "Route 66",
+          description: "Restaurant website with modern design, showcasing menus, ambiance, and building brand presence online.",
+          color: "#a78bfa",
+          url: "https://www.route66-route66.afterlife.org.in/",
+          technologies: ["React", "Tailwind CSS", "Animations"],
+        },
+        {
+          icon: Globe,
+          name: "The Way Cardiff",
+          description: "Website for The Way Cardiff, a UK-based venue and community space. Designed to engage visitors and showcase events.",
+          color: "#fb923c",
+          url: "https://thewaycardiff.co.uk/",
+          technologies: ["Web Design", "SEO", "Responsive"],
+        },
+      ],
     },
     {
-      icon: Heart,
-      name: "Rehabb Care",
-      description: "Healthcare platform connecting patients with rehabilitation services. Clean, accessible design focused on trust and ease of use.",
-      category: "website",
-      color: "#34d399",
-      url: "https://rehabb.care/",
-      technologies: ["React", "Responsive Design", "SEO"],
+      title: "ScanMe",
+      eyebrow: "Digital Menu Solutions",
+      items: [
+        {
+          icon: QrCode,
+          name: "ScanMe - Royal Bangla",
+          description: "QR-based digital menu and ordering system for Royal Bangla restaurant. Contactless ordering with real-time analytics.",
+          color: "#f59e0b",
+          url: "https://www.royalbangla-scanme.afterlife.org.in",
+          technologies: ["React", "Node.js", "QR Integration"],
+        },
+        {
+          icon: QrCode,
+          name: "ScanMe - Taj Mahal",
+          description: "Digital menu solution for Taj Mahal restaurant. Instant QR access, multi-language support, and order tracking.",
+          color: "#fbbf24",
+          url: "https://www.tajmahal-scanme.afterlife.org.in/",
+          technologies: ["React", "Node.js", "QR Integration"],
+        },
+      ],
     },
     {
-      icon: Smartphone,
-      name: "SmartphoneCity",
-      description: "Customer-based CRM system for a smartphone retail business. Manages customer relationships, inventory, and sales tracking.",
-      category: "service",
-      color: "#60a5fa",
-      url: "https://www.smartphonecity.afterlife.org.in/",
-      technologies: ["React", "CRM", "Database"],
+      title: "Healthcare",
+      eyebrow: "Health & Wellness",
+      items: [
+        {
+          icon: Heart,
+          name: "Rehabb Care",
+          description: "Healthcare platform connecting patients with rehabilitation services. Accessible, trustworthy design with booking and information systems.",
+          color: "#34d399",
+          url: "https://rehabb.care/",
+          technologies: ["React", "Accessibility", "Healthcare UX"],
+        },
+      ],
     },
     {
-      icon: Car,
-      name: "Route 66",
-      description: "Website for Route 66 business with modern design, showcasing services and building brand presence online.",
-      category: "website",
-      color: "#a78bfa",
-      url: "https://www.route66-route66.afterlife.org.in/",
-      technologies: ["React", "Tailwind CSS", "Animations"],
-    },
-    {
-      icon: Users,
-      name: "UpClosets",
-      description: "Custom CRM solution for UpClosets. Manages client interactions, project tracking, and business operations in one platform.",
-      category: "service",
-      color: "#38bdf8",
-      technologies: ["React", "CRM", "Cloud"],
-    },
-    {
-      icon: Building2,
-      name: "Autonomiq",
-      description: "Corporate website for Autonomiq, a UAE-based tech company. Professional design reflecting innovation and enterprise solutions.",
-      category: "website",
-      color: "#818cf8",
-      url: "https://autonomiq.ae/",
-      technologies: ["React", "Modern UI", "Performance"],
-    },
-    {
-      icon: Globe,
-      name: "The Way Cardiff",
-      description: "Website for The Way Cardiff, a UK-based venue and community space. Designed to engage visitors and showcase events.",
-      category: "website",
-      color: "#fb923c",
-      url: "https://thewaycardiff.co.uk/",
-      technologies: ["Web Design", "SEO", "Responsive"],
-    },
-    {
-      icon: Utensils,
-      name: "Taj Mahal",
-      description: "Restaurant website for Taj Mahal with menu presentation, online ordering integration, and a vibrant brand identity.",
-      category: "website",
-      color: "#e879f9",
-      url: "https://www.tajmahal-tajmahal.afterlife.org.in/",
-      technologies: ["React", "Tailwind CSS", "Vite"],
+      title: "Ongoing Projects",
+      eyebrow: "Currently Building",
+      items: [
+        {
+          icon: Users,
+          name: "UpClosets",
+          description: "Custom CRM solution for UpClosets. Managing client interactions, project tracking, and business operations in one platform.",
+          color: "#38bdf8",
+          technologies: ["React", "CRM", "Cloud"],
+          status: "ongoing",
+        },
+        {
+          icon: Eye,
+          name: "Top Sights",
+          description: "CRM platform for Top Sights. Streamlining customer management, bookings, and operational workflows.",
+          color: "#a78bfa",
+          technologies: ["React", "CRM", "Analytics"],
+          status: "ongoing",
+        },
+      ],
     },
   ];
 
@@ -299,7 +362,7 @@ const PortfolioPage: React.FC = () => {
             Featured Projects
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Services and websites we've built for businesses that needed real solutions
+            Services and websites we've built for businesses across multiple industries
           </p>
         </div>
       </section>
@@ -307,40 +370,42 @@ const PortfolioPage: React.FC = () => {
       {/* Stats Section */}
       <section className="relative py-12 px-4 md:px-8 bg-gray-900 border-y border-gray-700/50">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          <StatCard value="9+" label="Projects Delivered" color="#60a5fa" />
-          <StatCard value="8+" label="Happy Clients" color="#a78bfa" />
+          <StatCard value="12+" label="Projects Delivered" color="#60a5fa" />
+          <StatCard value="10+" label="Happy Clients" color="#a78bfa" />
           <StatCard value="5+" label="Industries Served" color="#34d399" />
           <StatCard value="100%" label="Client Satisfaction" color="#f59e0b" />
         </div>
       </section>
 
-      {/* Spotlight Cards Section */}
-      <section className="relative py-16 px-4 md:px-8 bg-gray-900">
-        <div className="max-w-7xl mx-auto relative">
-          {/* Section Header */}
-          <div className="mb-10 flex flex-col gap-1.5">
-            <p className="font-semibold text-xs text-indigo-400 uppercase tracking-[0.22em]">
-              Portfolio
-            </p>
-            <h2 className="font-semibold text-2xl md:text-3xl text-white tracking-tight">
-              What we've shipped
-            </h2>
-          </div>
+      {/* Category Sections */}
+      {categories.map((category) => (
+        <section key={category.title} className="relative py-16 px-4 md:px-8 bg-gray-900 border-b border-gray-800">
+          <div className="max-w-7xl mx-auto relative">
+            {/* Section Header */}
+            <div className="mb-10 flex flex-col gap-1.5">
+              <p className="font-semibold text-xs text-indigo-400 uppercase tracking-[0.22em]">
+                {category.eyebrow}
+              </p>
+              <h2 className="font-semibold text-2xl md:text-3xl text-white tracking-tight">
+                {category.title}
+              </h2>
+            </div>
 
-          {/* Card Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {portfolioItems.map((item) => (
-              <PortfolioCard
-                key={item.name}
-                item={item}
-                dimmed={hoveredName !== null && hoveredName !== item.name}
-                onHoverStart={() => setHoveredName(item.name)}
-                onHoverEnd={() => setHoveredName(null)}
-              />
-            ))}
+            {/* Card Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {category.items.map((item) => (
+                <PortfolioCard
+                  key={item.name + category.title}
+                  item={item}
+                  dimmed={hoveredName !== null && hoveredName !== item.name + category.title}
+                  onHoverStart={() => setHoveredName(item.name + category.title)}
+                  onHoverEnd={() => setHoveredName(null)}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       {/* CTA Section */}
       <section className="relative py-20 px-4 md:px-8 bg-gray-800/50 border-t border-gray-700/50">
