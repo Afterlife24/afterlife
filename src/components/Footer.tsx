@@ -1,106 +1,126 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Bot, Twitter, Linkedin, Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Facebook, Instagram, Mail, MapPin } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-
+import logo from '../assests/removed.png';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto pt-12 pb-8 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center mb-4">
-              <Bot className="h-8 w-8 text-blue-500" />
-              <span className="ml-2 text-xl font-bold text-white">AI Solutions</span>
-            </div>
-            <p className="mb-4">
-              Empowering institutions and businesses with advanced AI solutions since 2025.
+    <footer className="bg-gray-900 border-t border-gray-800 text-gray-400">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-14 pb-8">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
+
+          {/* Brand */}
+          <div className="md:col-span-4">
+            <Link to="/" className="mb-5 flex items-center gap-2.5">
+              <img src={logo} alt="AfterLife" className="h-8 w-8 object-contain" />
+              <span className="text-xl font-bold text-white">AfterLife</span>
+            </Link>
+            <p className="mb-6 text-sm leading-relaxed">
+              An AI consultancy helping businesses solve real problems — automating
+              workflows and building custom AI solutions that actually move the needle.
             </p>
-            <div className="flex space-x-4">
-              
-              <a href="https://www.linkedin.com/company/afterlife24/?viewAsMember=true" className="text-gray-400 hover:text-blue-500 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Follow AfterLife on LinkedIn">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="https://www.facebook.com/people/Pretty-Ai/pfbid02MFqJj5vMHBktZHMUQcbknoiAfStFV3sc3UQgTRaeGo68hJJYbZ28dWtmKqryLqw8l/" className="text-gray-400 hover:text-blue-500 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Follow AfterLife on Facebook">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="https://www.instagram.com/afterlife668?igsh=N29qMXBkNTM0b2ll&utm_source=qr" className="text-gray-400 hover:text-blue-500 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Follow AfterLife on Instagram">
-                <Instagram className="h-5 w-5" />
-              </a>
+            {/* Socials */}
+            <div className="flex items-center gap-3">
+              {[
+                {
+                  href: 'https://www.linkedin.com/company/afterlife24/?viewAsMember=true',
+                  label: 'LinkedIn',
+                  icon: <Linkedin className="h-4 w-4" />,
+                },
+                {
+                  href: 'https://www.facebook.com/people/Pretty-Ai/pfbid02MFqJj5vMHBktZHMUQcbknoiAfStFV3sc3UQgTRaeGo68hJJYbZ28dWtmKqryLqw8l/',
+                  label: 'Facebook',
+                  icon: <Facebook className="h-4 w-4" />,
+                },
+                {
+                  href: 'https://www.instagram.com/afterlife668?igsh=N29qMXBkNTM0b2ll&utm_source=qr',
+                  label: 'Instagram',
+                  icon: <Instagram className="h-4 w-4" />,
+                },
+              ].map(({ href, label, icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-700/60 bg-gray-800/50 text-gray-500 transition-all hover:border-indigo-500/50 hover:text-indigo-400"
+                >
+                  {icon}
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="hover:text-blue-500 transition-colors">Home</Link>
-              </li>
-              <li>
-                <Link to="/about" className="hover:text-blue-500 transition-colors">About Us</Link>
-              </li>
-              <li>
-                <Link to="/facesite" className="hover:text-blue-500 transition-colors">FaceSite</Link>
-              </li>
-              <li>
-                <Link to="/product" className="hover:text-blue-500 transition-colors">ScanMe</Link>
-              </li>
-              
+          {/* Quick links */}
+          <div className="md:col-span-2">
+            <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-white">
+              Company
+            </h3>
+            <ul className="space-y-3 text-sm">
+              {[
+                { label: 'Home', to: '/' },
+                { label: 'About', to: '/about' },
+                { label: 'Portfolio', to: '/portfolio' },
+              ].map(({ label, to }) => (
+                <li key={label}>
+                  <Link to={to} className="transition-colors hover:text-indigo-400">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/facesite" className="hover:text-blue-500 transition-colors">FaceSite: AI Avatar</Link>
-              </li>
-              <li>
-                <Link to="/product" className="hover:text-blue-500 transition-colors">ScanMe: Digital Menu</Link>
-              </li>
-              <li>
-                <Link to="/business-analytics" className="hover:text-blue-500 transition-colors">AI Services</Link>
-              </li>
-              <li>
-                <Link to="/web-development" className="hover:text-blue-500 transition-colors">Web Development</Link>
-              </li>
-              <li>
-                <Link to="/web-hosting" className="hover:text-blue-500 transition-colors">Web Hosting</Link>
-              </li>
-              <li>
-                <Link to="/mobile-apps" className="hover:text-blue-500 transition-colors">Mobile Apps</Link>
-              </li>
-              
+          <div className="md:col-span-3">
+            <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-white">
+              Services
+            </h3>
+            <ul className="space-y-3 text-sm">
+              {[
+                'AI Strategy',
+                'Workflow Automation',
+                'Custom AI Solutions',
+                'Data Intelligence',
+              ].map((s) => (
+                <li key={s}>
+                  <span className="transition-colors hover:text-indigo-400 cursor-default">
+                    {s}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-blue-500 mr-2 mt-0.5" />
-                <span>Paris 70123</span>
+          {/* Contact */}
+          <div className="md:col-span-3">
+            <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-white">
+              Contact
+            </h3>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-indigo-400" />
+                <span>Paris, France 75001</span>
               </li>
-              <li className="flex items-center">
-  <FaWhatsapp className="h-5 w-5 text-green-500 mr-2" />
-  <a
-    href="https://wa.me/33766720023"
-    className="hover:text-green-500 transition-colors"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    +33 (766) 720-023
-  </a>
-</li>
-
-              <li className="flex items-center">
-                <Mail className="h-5 w-5 text-blue-500 mr-2" />
-                <a href="mailto:info@aisolutions.com" className="hover:text-blue-500 transition-colors">
+              <li className="flex items-center gap-3">
+                <FaWhatsapp className="h-4 w-4 shrink-0 text-green-400" />
+                <a
+                  href="https://wa.me/33766720023"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-green-400"
+                >
+                  +33 766 720 023
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="h-4 w-4 shrink-0 text-indigo-400" />
+                <a
+                  href="mailto:admin@afterlife.org.in"
+                  className="transition-colors hover:text-indigo-400"
+                >
                   admin@afterlife.org.in
                 </a>
               </li>
@@ -108,13 +128,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; 2025 AI Solutions. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-blue-500 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-blue-500 transition-colors">Terms of Service</a>
-            </div>
+        {/* Bottom bar */}
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-800 pt-8 text-xs sm:flex-row">
+          <p className="text-gray-600">© 2025 AfterLife. All rights reserved.</p>
+          <div className="flex items-center gap-6 text-gray-600">
+            <a href="#" className="transition-colors hover:text-gray-300">Privacy Policy</a>
+            <a href="#" className="transition-colors hover:text-gray-300">Terms of Service</a>
           </div>
         </div>
       </div>

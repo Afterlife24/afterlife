@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Bot, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import logo from '../assests/removed.png';
 
 
@@ -16,10 +16,8 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
     { name: 'Portfolio', path: '/portfolio' },
-    { name: 'FaceSite', path: '/facesite' },
-    { name: 'Scanme', path: '/product' },
+    { name: 'About', path: '/about' },
   ];
   
   useEffect(() => {
@@ -79,14 +77,6 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             </div>
             
             <div className="flex items-center space-x-4">
-              <button
-                onClick={toggleDarkMode}
-                className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
-                aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-              >
-                {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-              </button>
-              
               <a
   href="https://wa.me/33766720023"
   className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
@@ -94,19 +84,10 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
 >
   Contact Us
 </a>
-
             </div>
           </div>
           
           <div className="flex items-center md:hidden">
-            <button
-              onClick={toggleDarkMode}
-              className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors mr-4"
-              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </button>
-            
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
