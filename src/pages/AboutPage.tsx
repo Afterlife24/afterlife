@@ -5,7 +5,6 @@ import TeamMember from '../components/TeamMember';
 
 import austin from '../assests/WhatsApp Image 2025-06-06 at 21.13.21_bc7f3526.jpg';
 import dhanush from '../assests/dhanush.png';
-import ashrith from '../assests/ash.jpg';
 
 /* ─── useInView ─────────────────────────────────────────────────────────────── */
 function useInView(threshold = 0.15) {
@@ -31,12 +30,6 @@ const TEAM = [
     role: 'CEO',
     image: austin,
     bio: 'Marketing strategist with a data-driven approach. Passionate about scaling brands through innovative growth strategies.',
-  },
-  {
-    name: 'Ashrith',
-    role: 'CTO',
-    image: ashrith,
-    bio: 'Technology leader driving innovation in web and mobile application development. Oversees technical strategy and architecture for scalable, high-performance solutions.',
   },
   {
     name: 'DhanushVardhan',
@@ -249,7 +242,7 @@ const AboutPage: React.FC = () => {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {TEAM.map((member, i) => (
               <motion.div
                 key={member.name}
