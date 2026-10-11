@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { ExternalLink, Globe, Smartphone, QrCode, Users, Utensils, Car, Heart, Building2, Cpu, Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import type { LucideIcon } from 'lucide-react';
 
 // ─── Constants ──────────────────────────────────────────────────────────────────
@@ -344,6 +345,14 @@ const PortfolioPage: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full bg-gray-900 text-gray-100">
+      <Helmet>
+        <title>Portfolio — AfterLife | AI & Web Projects We've Built</title>
+        <meta name="description" content="Explore AfterLife's portfolio of AI and web projects — from digital menus and restaurant websites to healthcare platforms, CRMs, and corporate sites across 5+ industries." />
+        <link rel="canonical" href="https://www.afterlife.org.in/portfolio" />
+        <meta property="og:url" content="https://www.afterlife.org.in/portfolio" />
+        <meta property="og:title" content="Portfolio — AfterLife | AI & Web Projects We've Built" />
+        <meta property="og:description" content="Explore our portfolio of 9+ projects across restaurants, healthcare, retail, and more — built with React, AI, and modern web tech." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative py-24 px-4 md:px-8 overflow-hidden bg-gradient-to-b from-gray-800 to-gray-900">
         {/* Gradient orb */}

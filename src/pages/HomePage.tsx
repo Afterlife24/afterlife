@@ -5,6 +5,7 @@ import React, {
   useState,
 } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import {
   motion,
   AnimatePresence,
@@ -487,6 +488,14 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full bg-gray-900 text-gray-100">
+      <Helmet>
+        <title>AfterLife — AI Consultancy | Automate, Build & Scale with AI</title>
+        <meta name="description" content="AfterLife is an AI consultancy that helps businesses solve real problems using AI. We automate workflows, build custom AI solutions, and turn data into real decisions." />
+        <link rel="canonical" href="https://www.afterlife.org.in/" />
+        <meta property="og:url" content="https://www.afterlife.org.in/" />
+        <meta property="og:title" content="AfterLife — AI Consultancy | Automate, Build & Scale with AI" />
+        <meta property="og:description" content="We help businesses solve real problems using AI — automating workflows, building custom AI solutions, and turning data into decisions. No generic tools, just results." />
+      </Helmet>
       {/* Cursor spotlight */}
       <div
         aria-hidden="true"

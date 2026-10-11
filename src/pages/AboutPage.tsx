@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Award, Users, Briefcase, BookOpen, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import TeamMember from '../components/TeamMember';
 
 import austin from '../assests/WhatsApp Image 2025-06-06 at 21.13.21_bc7f3526.jpg';
@@ -78,6 +79,14 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full bg-gray-900 text-gray-100">
+      <Helmet>
+        <title>About AfterLife — Our Team & Story | AI Consultancy</title>
+        <meta name="description" content="Meet the AfterLife team. Founded in 2025, we're an AI consultancy helping businesses automate workflows, build custom AI solutions, and turn data into decisions." />
+        <link rel="canonical" href="https://www.afterlife.org.in/about" />
+        <meta property="og:url" content="https://www.afterlife.org.in/about" />
+        <meta property="og:title" content="About AfterLife — Our Team & Story | AI Consultancy" />
+        <meta property="og:description" content="Meet the AfterLife team. Founded in 2025, we help businesses solve real problems with AI — no generic tools, just results." />
+      </Helmet>
 
       {/* ─── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden py-28 px-6 md:px-12">

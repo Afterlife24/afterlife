@@ -75,13 +75,13 @@
 
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import NotificationBar from './components/NotificationBar';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import PortfolioPage from './pages/PortfolioPage';
-import EcosystemPage from './pages/EcosystemPage';
 import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
@@ -102,32 +102,23 @@ function App() {
   ];
 
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        {/* Ecosystem ships its own nav — rendered outside the site chrome */}
-        <Route path="/ecosystem" element={<EcosystemPage />} />
-
-        {/* Everything else uses the standard layout */}
-        <Route
-          path="*"
-          element={
-            <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-              <NotificationBar notifications={notifications} />
-              <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-              <main className="flex-grow">
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/portfolio" element={<PortfolioPage />} />
-                </Routes>
-              </main>
-              <Footer />
-            </div>
-          }
-        />
-      </Routes>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+          <NotificationBar notifications={notifications} />
+          <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/portfolio" element={<PortfolioPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 
